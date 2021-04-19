@@ -42,16 +42,16 @@
 
 
 // enum
-enum Role {ADMIN = 5, USER = 'USER', READ_ONLY_USER = 2}
-const person = {
-    name: 'Amir',
-    age: 25,
-    interestedIn: ['js', 'node', 'express'],
-    role: Role.USER
-}
+// enum Role {ADMIN = 5, USER = 'USER', READ_ONLY_USER = 2}
+// const person = {
+//     name: 'Amir',
+//     age: 25,
+//     interestedIn: ['js', 'node', 'express'],
+//     role: Role.USER
+// }
 
-console.log(typeof person);
-if(person.role === Role.USER) {
-    console.log('USER');
-}
-console.log(Role);
+// console.log(typeof person);
+// if(person.role === Role.USER) {
+//     console.log('USER');
+// }
+// console.log(Role);
