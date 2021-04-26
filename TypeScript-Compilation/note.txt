@@ -1,0 +1,25 @@
+** For watching for compilation we can use these commands
+
+1. tsc app.ts --watch
+2. tsc app.ts -w
+
+**If we have some TypeScript files in our project and want to compile them we should have tsconfig.json and for that we need to run this command.
+
+1. tsc --init
+
+** After that if we run below command, all of ts files will be compiled.
+
+1. tsc
+
+** In watch mode
+
+1. tsc --watch
+2. tsc -w
+
+** excluding and including
+
+** setting compilation target ie. es5, es6, etc.
+
+** lib if we don't specify it, it will be default else we should specify them
+
+** SourceMap for debugging ts files in modern browsers

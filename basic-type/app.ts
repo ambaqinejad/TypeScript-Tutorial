@@ -1,3 +1,6 @@
+// unknown type
+
+
 // let userInput: unknown;
 // let username: string;
 
@@ -17,4 +20,14 @@
 
 // userInput = 4;
 // userInput = "Ali";
-username =userInput; // this is ok
+// username = userInput; // this is ok
+
+
+
+// never type
+
+
+// function creatingError(message: string, code: number): never {
+//     throw {message, code}
+//     // while (true) {}
+// }
