@@ -23,3 +23,20 @@
 ** lib if we don't specify it, it will be default else we should specify them
 
 ** SourceMap for debugging ts files in modern browsers
+
+** Out Dir/Root Dir
+
+** removeComments": true,                       /* Do not emit comments to output. */
+
+** "noEmit": true,                              /* Do not emit outputs. */
+
+** "downlevelIteration": true,                  /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
+
+** "noEmitOnError": true                       /* None of files will not be compiled if there are some error in some files.
+
+** Strict Type-Checking Options
+
+// "noUnusedLocals": true,                      /* Report errors on unused locals. */
+// "noUnusedParameters": true,                  /* Report errors on unused parameters. */
+// "noImplicitReturns": true,                   /* Report error when not all code paths in function return a value. */
+// "noFallthroughCasesInSwitch": true,          /* Report errors for fallthrough cases in switch statement. */
