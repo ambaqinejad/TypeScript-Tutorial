@@ -1,7 +1,7 @@
 class Department {
   // private readonly id: string;
   // private name: string;
-  private employees: string[] = [];
+  protected employees: string[] = [];
 
   // constructor(id: string, name: string) {
   //   this.id = id;
@@ -18,7 +18,7 @@ class Department {
   }
 
   getEmployees() {
-    console.log(this.employees);
+    return this.employees;
   }
 }
 
@@ -30,13 +30,26 @@ class ITDepartment extends Department {
   getAdmins() {
     return this.admins;
   }
+
+  addEmployee(employee: string) {
+    if (employee === "Amir") {
+      return;
+    }
+    this.employees.push(employee);
+  }
 }
 
-const accounting = new Department("d1", "Accounting");
-accounting.describe();
-accounting.addEmployee("Amir");
-accounting.addEmployee("Hosein");
-accounting.getEmployees();
+const it = new ITDepartment("i1", ["Amir"]);
+console.log(it.getAdmins());
+it.addEmployee("Amir");
+it.addEmployee("Hadi");
+console.log(it.getEmployees());
+// const accounting = new Department("d1", "Accounting");
+// accounting.describe();
+// accounting.addEmployee("Amir");
+// accounting.addEmployee("Hosein");
+// accounting.getEmployees();
+
 // const HR = { name: "Human Resource" };
 
 // accounting.describe.call(HR);

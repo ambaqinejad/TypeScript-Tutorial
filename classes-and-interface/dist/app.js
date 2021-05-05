@@ -12,7 +12,7 @@ class Department {
         this.employees.push(employee);
     }
     getEmployees() {
-        console.log(this.employees);
+        return this.employees;
     }
 }
 class ITDepartment extends Department {
@@ -23,10 +23,16 @@ class ITDepartment extends Department {
     getAdmins() {
         return this.admins;
     }
+    addEmployee(employee) {
+        if (employee === "Amir") {
+            return;
+        }
+        this.employees.push(employee);
+    }
 }
-const accounting = new Department("d1", "Accounting");
-accounting.describe();
-accounting.addEmployee("Amir");
-accounting.addEmployee("Hosein");
-accounting.getEmployees();
+const it = new ITDepartment("i1", ["Amir"]);
+console.log(it.getAdmins());
+it.addEmployee("Amir");
+it.addEmployee("Hadi");
+console.log(it.getEmployees());
 //# sourceMappingURL=app.js.map
