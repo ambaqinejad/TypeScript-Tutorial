@@ -10,7 +10,7 @@ class Department {
   constructor(private readonly id: string, private name: string) {} // Shorthand
 
   describe(this: Department) {
-    console.log(`Department ${this.name}`);
+    console.log(`Department ${this.id}: ${this.name}`);
   }
 
   addEmployee(employee: string) {
@@ -19,6 +19,16 @@ class Department {
 
   getEmployees() {
     console.log(this.employees);
+  }
+}
+
+class ITDepartment extends Department {
+  constructor(id: string, private admins: string[]) {
+    super(id, "IT");
+  }
+
+  getAdmins() {
+    return this.admins;
   }
 }
 
