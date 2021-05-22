@@ -23,8 +23,26 @@ class Department {
 }
 
 class ITDepartment extends Department {
+  private lastAdmin: string = "";
   constructor(id: string, private admins: string[]) {
     super(id, "IT");
+    if (this.admins.length > 0) {
+      this.lastAdmin = this.admins[this.admins.length - 1];
+    }
+  }
+
+  get mostLastAdmin() {
+    if (this.lastAdmin) {
+      return this.lastAdmin;
+    }
+    throw new Error("There is not any admin.");
+  }
+
+  set mostLastAdmin(admin) {
+    if (!admin) {
+      throw new Error("Add valid admin");
+    }
+    this.addAdmin(admin);
   }
 
   getAdmins() {
@@ -37,11 +55,20 @@ class ITDepartment extends Department {
     }
     this.employees.push(employee);
   }
+
+  addAdmin(admin: string) {
+    this.admins.push(admin);
+    this.lastAdmin = admin;
+  }
 }
 
 const it = new ITDepartment("i1", ["Amir"]);
 console.log(it.getAdmins());
 it.addEmployee("Amir");
+console.log(it.mostLastAdmin);
+it.mostLastAdmin = "Ali";
+console.log(it.mostLastAdmin);
+
 it.addEmployee("Hadi");
 console.log(it.getEmployees());
 // const accounting = new Department("d1", "Accounting");

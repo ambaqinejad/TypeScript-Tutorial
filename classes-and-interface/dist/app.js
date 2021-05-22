@@ -19,6 +19,22 @@ class ITDepartment extends Department {
     constructor(id, admins) {
         super(id, "IT");
         this.admins = admins;
+        this.lastAdmin = "";
+        if (this.admins.length > 0) {
+            this.lastAdmin = this.admins[this.admins.length - 1];
+        }
+    }
+    get mostLastAdmin() {
+        if (this.lastAdmin) {
+            return this.lastAdmin;
+        }
+        throw new Error("There is not any admin.");
+    }
+    set mostLastAdmin(admin) {
+        if (!admin) {
+            throw new Error("Add valid admin");
+        }
+        this.addAdmin(admin);
     }
     getAdmins() {
         return this.admins;
@@ -29,10 +45,17 @@ class ITDepartment extends Department {
         }
         this.employees.push(employee);
     }
+    addAdmin(admin) {
+        this.admins.push(admin);
+        this.lastAdmin = admin;
+    }
 }
 const it = new ITDepartment("i1", ["Amir"]);
 console.log(it.getAdmins());
 it.addEmployee("Amir");
+console.log(it.mostLastAdmin);
+it.mostLastAdmin = "Ali";
+console.log(it.mostLastAdmin);
 it.addEmployee("Hadi");
 console.log(it.getEmployees());
 //# sourceMappingURL=app.js.map
